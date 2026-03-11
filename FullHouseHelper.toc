@@ -1,0 +1,7 @@
+## Author: Endar_Ren
+## Interface: 50400
+## Title: FullHouseHelper
+## Version: 1.0
+embeds.xml
+FullHouseHelper.lua
+FHHFrame.xml

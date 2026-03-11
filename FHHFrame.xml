@@ -1,0 +1,459 @@
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Frame name="FHHFrame" hidden="true" parent="UIParent" toplevel="true" movable="true">
+		<Size>
+			<AbsDimension x="334" y="334" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset x="100" y="-33" />
+			</Anchor>
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString inherits="GameFontNormal" text="Full House Helper" outline="NORMAL">
+					<Size x="295" y="21" />
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="20" y="-15" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="Add2Frame" parentKey="add2">
+				<Size x="296" y="71" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="20" y="-83" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="" edgeFile="" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer>
+						<Texture parentKey="found" file="Interface\RAIDFRAME\ReadyCheck-NotReady">
+							<Size x="30" y="29" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="142" y="-20" />
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="OVERLAY">
+						<FontString name="Add2Last" inherits="GameFontNormal" parentKey="time" text="Last Targeted:  0" justifyH="LEFT">
+							<Size x="115" y="18" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="178" y="-25" />
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame parentKey="sub2">
+						<Size x="133" y="29" />
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="3" y="-3" />
+							</Anchor>
+						</Anchors>
+						<Backdrop bgFile="" edgeFile="" tile="true">
+							<BackgroundInsets>
+								<AbsInset left="11" right="12" top="12" bottom="11" />
+							</BackgroundInsets>
+							<TileSize>
+								<AbsValue val="32" />
+							</TileSize>
+							<EdgeSize>
+								<AbsValue val="32" />
+							</EdgeSize>
+						</Backdrop>
+						<Frames>
+							<Button name="Add2ButtonA" inherits="SecureUnitButtonTemplate" parentKey="unit2" text="">
+								<Size x="130" y="29" />
+								<Anchors>
+									<Anchor point="TOPLEFT" />
+								</Anchors>
+								<Layers>
+									<Layer level="OVERLAY">
+										<FontString name="$parent_Name" inherits="GameFontHighlight" parentKey="name" setAllPoints="true" />
+										<Texture name="Add2Button_Selected" parentKey="selected" setAllPoints="true" hidden="true" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD">
+											<Anchors>
+												<Anchor point="TOPLEFT" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>
+										Add2Button1_OnClick()
+									</OnClick>
+								</Scripts>
+								<NormalTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+								<HighlightTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+							</Button>
+						</Frames>
+					</Frame>
+					<Frame parentKey="sub1">
+						<Size x="133" y="32" />
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="3" y="-36" />
+							</Anchor>
+						</Anchors>
+						<Backdrop bgFile="" edgeFile="" tile="true">
+							<BackgroundInsets>
+								<AbsInset left="11" right="12" top="12" bottom="11" />
+							</BackgroundInsets>
+							<TileSize>
+								<AbsValue val="32" />
+							</TileSize>
+							<EdgeSize>
+								<AbsValue val="32" />
+							</EdgeSize>
+						</Backdrop>
+						<Frames>
+							<Button name="Add2Button" inherits="SecureUnitButtonTemplate" parentKey="unit" text="Button1">
+								<Size x="130" y="29" />
+								<Anchors>
+									<Anchor point="TOPLEFT">
+										<Offset y="-3" />
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="OVERLAY">
+										<FontString name="$parent_Name" inherits="GameFontHighlight" parentKey="name" setAllPoints="true" />
+										<Texture name="Add2Button_Selected" parentKey="selected" setAllPoints="true" hidden="true" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD" />
+									</Layer>
+								</Layers>
+								<Scripts>
+									<PreClick>
+										FullHouseHelper:Add2ResetFound()
+									</PreClick>
+								</Scripts>
+								<NormalTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+								<HighlightTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+							</Button>
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+			<Frame name="Add3Frame" parentKey="add3">
+				<Size x="296" y="34" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="20" y="-160" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="" edgeFile="" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer>
+						<Texture parentKey="found" file="Interface\RAIDFRAME\ReadyCheck-NotReady">
+							<Size x="30" y="29" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="142" y="-3" />
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="OVERLAY">
+						<FontString inherits="GameFontNormal" parentKey="time" text="Last Targeted:  0" justifyH="LEFT">
+							<Size x="115" y="18" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="178" y="-3" />
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="Add3Button" inherits="SecureUnitButtonTemplate" parentKey="unit" text="Button1">
+						<Size x="130" y="29" />
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="3" y="-3" />
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parent_Name" inherits="GameFontHighlight" parentKey="name" setAllPoints="true" />
+								<Texture name="$parent_Selected" parentKey="selected" setAllPoints="true" hidden="true" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD" />
+							</Layer>
+						</Layers>
+						<Scripts>
+							<PreClick>
+								FullHouseHelper:Add3ResetFound()
+							</PreClick>
+						</Scripts>
+						<NormalTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+						<HighlightTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="Add4Frame" parentKey="add4">
+				<Size x="296" y="34" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="20" y="-200" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="" edgeFile="" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer>
+						<Texture parentKey="found" file="Interface\RAIDFRAME\ReadyCheck-NotReady">
+							<Size x="30" y="29" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="142" y="-3" />
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="OVERLAY">
+						<FontString inherits="GameFontNormal" parentKey="time" text="Last Targeted:  0" justifyH="LEFT">
+							<Size x="115" y="18" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="178" y="-3" />
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="Add4Button" inherits="SecureUnitButtonTemplate" parentKey="unit" text="Button1">
+						<Size x="130" y="29" />
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="3" y="-3" />
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parent_Name" inherits="GameFontHighlight" parentKey="name" setAllPoints="true" />
+								<Texture name="$parent_Selected" parentKey="selected" setAllPoints="true" hidden="true" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD" />
+							</Layer>
+						</Layers>
+						<Scripts>
+							<PreClick>
+								FullHouseHelper:Add4ResetFound()
+							</PreClick>
+						</Scripts>
+						<NormalTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+						<HighlightTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="Add5Frame" parentKey="add5">
+				<Size x="296" y="35" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="20" y="-240" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="" edgeFile="" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer>
+						<Texture parentKey="found" file="Interface\RAIDFRAME\ReadyCheck-NotReady">
+							<Size x="30" y="29" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="142" y="-3" />
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="OVERLAY">
+						<FontString inherits="GameFontNormal" parentKey="time" text="Last Targeted:  0" justifyH="LEFT">
+							<Size x="115" y="30" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="178" />
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="Add5Button" inherits="SecureUnitButtonTemplate" parentKey="unit" text="Button1">
+						<Size x="130" y="29" />
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="3" y="-3" />
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parent_Name" inherits="GameFontHighlight" parentKey="name" setAllPoints="true" />
+								<Texture name="$parent_Selected" parentKey="selected" setAllPoints="true" hidden="true" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD" />
+							</Layer>
+						</Layers>
+						<Scripts>
+							<PreClick>
+								FullHouseHelper:Add5ResetFound()
+							</PreClick>
+						</Scripts>
+						<NormalTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+						<HighlightTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+					</Button>
+				</Frames>
+			</Frame>
+			<Button inherits="UIPanelButtonTemplate" text="Close">
+				<Size x="82" y="28" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="218" y="-281" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						FHHFrame:Hide()
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="ClearButton" inherits="UIPanelButtonTemplate" text="Clear">
+				<Size x="82" y="28" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="28" y="-281" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						FullHouseHelper:ClearData()
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="Add1Frame" parentKey="add1">
+				<Size x="296" y="35" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="20" y="-42" />
+					</Anchor>
+				</Anchors>
+				<Backdrop bgFile="" edgeFile="" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize>
+						<AbsValue val="32" />
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32" />
+					</EdgeSize>
+				</Backdrop>
+				<Layers>
+					<Layer>
+						<Texture parentKey="found" file="Interface\RAIDFRAME\ReadyCheck-NotReady">
+							<Size x="30" y="29" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="142" y="-3" />
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="OVERLAY">
+						<FontString name="Add1Last" inherits="GameFontNormal" parentKey="time" text="Last Targeted:  0" justifyH="LEFT">
+							<Size x="115" y="18" />
+							<Anchors>
+								<Anchor point="TOPLEFT">
+									<Offset x="178" y="-3" />
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="Add1Button" inherits="SecureUnitButtonTemplate" parentKey="unit" text="Button1">
+						<Size x="130" y="29" />
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset x="3" y="-3" />
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parent_Name" inherits="GameFontHighlight" parentKey="name" setAllPoints="true" />
+								<Texture name="$parent_Selected" parentKey="selected" setAllPoints="true" hidden="true" file="Interface\Buttons\CheckButtonHilight" alphaMode="ADD" />
+							</Layer>
+						</Layers>
+						<Scripts>
+							<PreClick>
+								FullHouseHelper:Add1ResetFound()
+							</PreClick>
+						</Scripts>
+						<NormalTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+						<HighlightTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				self:RegisterForDrag("LeftButton","RightButton")
+			</OnLoad>
+			<OnDragStart>
+				self:StartMoving()
+			</OnDragStart>
+			<OnDragStop>
+				self:StopMovingOrSizing()
+			</OnDragStop>
+		</Scripts>
+	</Frame>
+</Ui>
