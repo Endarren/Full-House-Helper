@@ -1,5 +1,5 @@
 ## Author: Endar_Ren
-## Interface: 50400
+## Interface: 60100
 ## Title: FullHouseHelper
 ## Version: 1.0
 embeds.xml

@@ -109,7 +109,7 @@
 								</Layers>
 								<Scripts>
 									<OnClick>
-										Add2Button1_OnClick()
+									--	Add2Button1_OnClick()
 									</OnClick>
 								</Scripts>
 								<NormalTexture file="Interface\TARGETINGFRAME\UI-TargetingFrame-BarFill" />

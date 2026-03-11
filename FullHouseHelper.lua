@@ -35,10 +35,24 @@ local NeooptionTable = {
 									desc = "Shows the summon request list",
 									type = "execute",
 									func = function ()
-										if InCombatLockdown() == nil then
+										
+										if InCombatLockdown() == nil or InCombatLockdown() == false then
 											FHHFrame:Show()
+									
 										end 
 									end
+						},
+						resetpos = {
+						name = "Reset Position",
+									desc = "Resets position of the frame to center",
+									type = "execute",
+									func = function ()
+										if InCombatLockdown() == nil then
+											FHHFrame:ClearAllPoints()
+FHHFrame:SetPoint("CENTER",UIParent, "CENTER")
+										end 
+									end
+						
 						}
 
 				}
